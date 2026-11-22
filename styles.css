@@ -1383,8 +1383,13 @@ html[dir="rtl"] .mobile-drawer-panel {
 }
 
 .standards-swiper {
+  width: 100%;
   max-width: 100%;
   overflow: hidden;
+}
+
+.standards-swiper .swiper-wrapper {
+  align-items: stretch;
 }
 
 .standards-swiper .swiper-slide {
@@ -1392,90 +1397,316 @@ html[dir="rtl"] .mobile-drawer-panel {
   box-sizing: border-box;
 }
 
-/* Fluid type scale — scales smoothly from 360px phones to 1440px desktops */
-html { font-size: clamp(14.5px, 0.3vw + 13.4px, 16px); }
+/* Harmonious Fluid Typography Scale (360px Mobile -> 768px Tablet -> 1440px Desktop) */
+html {
+  font-size: clamp(14.5px, 0.25vw + 13.6px, 16px);
+}
 
-.hero-title      { font-size: clamp(1.65rem, 2.6vw + 0.9rem, 3rem); line-height: 1.3; }
-.hero-desc       { font-size: clamp(0.94rem, 0.35vw + 0.85rem, 1.06rem); }
-.section-title   { font-size: clamp(1.4rem, 1.6vw + 0.95rem, 2.25rem); line-height: 1.35; }
-.section-sub     { font-size: clamp(0.9rem, 0.25vw + 0.84rem, 1rem); }
+.hero-title {
+  font-size: clamp(1.52rem, 2.05vw + 0.82rem, 2.48rem);
+  font-weight: 800;
+  line-height: 1.32;
+}
+
+.hero-desc {
+  font-size: clamp(0.9rem, 0.28vw + 0.82rem, 1.02rem);
+  line-height: 1.76;
+}
+
+.section-title {
+  font-size: clamp(1.32rem, 1.45vw + 0.88rem, 2.05rem);
+  font-weight: 800;
+  line-height: 1.34;
+}
+
+.section-sub {
+  font-size: clamp(0.86rem, 0.22vw + 0.8rem, 0.96rem);
+  line-height: 1.7;
+}
+
 .service-card h3,
-.pillar-card h3  { font-size: clamp(1rem, 0.3vw + 0.92rem, 1.14rem); }
-.service-card p,
-.pillar-card p   { font-size: clamp(0.86rem, 0.18vw + 0.82rem, 0.93rem); }
-.branch-card h3  { font-size: clamp(1.08rem, 0.4vw + 0.98rem, 1.24rem); }
-.booking-aside h3{ font-size: clamp(1.2rem, 0.8vw + 1rem, 1.55rem); }
-.brand-name      { font-size: clamp(0.9rem, 0.3vw + 0.84rem, 1.02rem); }
-.brand-sub       { font-size: clamp(0.68rem, 0.15vw + 0.65rem, 0.76rem); }
-.btn-lg          { font-size: clamp(0.9rem, 0.2vw + 0.86rem, 0.98rem); }
+.pillar-card h3 {
+  font-size: clamp(0.98rem, 0.28vw + 0.9rem, 1.12rem);
+  font-weight: 800;
+}
 
-/* Footer clears fixed floating buttons at the very bottom */
-.site-footer { padding-bottom: 96px; }
+.service-card p,
+.pillar-card p,
+.branch-detail-list li,
+.faq-body p {
+  font-size: clamp(0.85rem, 0.16vw + 0.8rem, 0.92rem);
+  line-height: 1.7;
+}
+
+.branch-card h3 {
+  font-size: clamp(1.04rem, 0.35vw + 0.94rem, 1.2rem);
+  font-weight: 800;
+}
+
+.booking-aside h3 {
+  font-size: clamp(1.18rem, 0.7vw + 0.96rem, 1.48rem);
+  font-weight: 800;
+}
+
+.faq-trigger {
+  font-size: clamp(0.88rem, 0.22vw + 0.82rem, 0.97rem);
+}
+
+.nav-link {
+  font-size: clamp(0.82rem, 0.18vw + 0.74rem, 0.9rem);
+}
+
+.brand-name {
+  font-size: clamp(0.86rem, 0.25vw + 0.78rem, 1rem);
+}
+
+.brand-sub {
+  font-size: clamp(0.66rem, 0.14vw + 0.62rem, 0.74rem);
+}
+
+.btn {
+  font-size: clamp(0.84rem, 0.18vw + 0.78rem, 0.92rem);
+}
+
+.btn-lg {
+  font-size: clamp(0.88rem, 0.2vw + 0.82rem, 0.96rem);
+}
+
+/* Position both floating controls on inset-inline-end (left in RTL) so right-aligned Arabic content is never covered */
+.floating-wa {
+  inset-inline-start: auto;
+  inset-inline-end: 18px;
+  bottom: max(18px, env(safe-area-inset-bottom));
+}
+
+.scroll-top-btn {
+  inset-inline-start: auto;
+  inset-inline-end: 18px;
+  bottom: calc(max(18px, env(safe-area-inset-bottom)) + 56px);
+}
+
+/* Footer clears fixed floating buttons comfortably */
+.site-footer {
+  padding-bottom: 88px;
+}
 
 /* Desktop polish */
 @media (min-width: 1025px) {
-  .hero-grid { gap: 56px; }
-  .standards-layout { gap: 48px; }
+  .hero-grid {
+    gap: 52px;
+  }
+
+  .standards-layout {
+    gap: 44px;
+  }
+
+  .hero-float-card {
+    padding: 12px 15px;
+    bottom: 14px;
+    inset-inline-start: 14px;
+    inset-inline-end: 14px;
+  }
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .hero-visual { max-width: 640px; margin-inline: auto; width: 100%; }
-  .standards-photo { max-width: 640px; margin-inline: auto; width: 100%; }
-  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .footer-brand { grid-column: 1 / -1; }
+  .hero-visual,
+  .standards-photo {
+    max-width: 640px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
 }
 
 /* Mobile */
 @media (max-width: 680px) {
-  .container { width: calc(100% - 28px); }
+  .container {
+    width: calc(100% - 26px);
+  }
 
-  .demo-ribbon { font-size: 0.74rem; }
-  .demo-ribbon-inner { padding: 7px 0; gap: 6px; }
-  .demo-ribbon-text { line-height: 1.5; }
+  .demo-ribbon {
+    font-size: 0.72rem;
+  }
 
-  .header-inner { min-height: 64px; gap: 10px; }
-  .brand-crest { width: 38px; height: 38px; border-radius: 12px; }
-  .brand-crest svg { width: 20px; height: 20px; }
-  .brand-copy { min-width: 0; }
-  .brand-name, .brand-sub { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 46vw; }
-  .header-actions { gap: 6px; }
-  .icon-pill-btn { height: 36px; min-width: 36px; padding: 0 9px; border-radius: 11px; }
+  .demo-ribbon-inner {
+    padding: 6px 0;
+    gap: 6px;
+  }
 
-  .hero-kicker { font-size: 0.76rem; padding: 6px 12px; line-height: 1.5; }
-  .hero-ctas { flex-direction: column; align-items: stretch; }
-  .hero-ctas .btn { width: 100%; }
-  .hero-trust-row { gap: 14px; }
+  .demo-ribbon-text {
+    line-height: 1.45;
+  }
 
-  .hero-float-card { position: static; margin: 0; border-radius: 0; }
-  .hero-photo-frame { aspect-ratio: auto; display: flex; flex-direction: column; }
-  .hero-photo-frame img { aspect-ratio: 4 / 3; height: auto; }
-  .hero-top-pill { font-size: 0.72rem; padding: 6px 11px; top: 12px; inset-inline-end: 12px; }
+  .header-inner {
+    min-height: 62px;
+    gap: 8px;
+  }
 
-  .section-head { margin-bottom: 32px; }
-  .service-card { padding: 22px 18px; }
-  .branch-card { padding: 22px 18px; }
-  .branch-actions .btn { flex: 1 1 100%; }
+  .brand-mark {
+    gap: 9px;
+  }
 
-  .booking-direct-card a { font-size: 1.05rem; }
-  .faq-trigger { padding: 16px; font-size: 0.92rem; }
-  .faq-body p { padding: 0 16px 16px; }
+  .brand-crest {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+  }
 
-  .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 26px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; text-align: start; }
-  .site-footer { padding-bottom: 100px; }
+  .brand-crest svg {
+    width: 19px;
+    height: 19px;
+  }
 
-  .floating-wa { inset-inline-start: 14px; bottom: max(14px, env(safe-area-inset-bottom)); }
-  .scroll-top-btn { inset-inline-end: 14px; bottom: max(18px, env(safe-area-inset-bottom)); }
-}
+  .brand-name {
+    font-size: 0.84rem;
+    white-space: nowrap;
+  }
 
-/* Small phones */
-@media (max-width: 380px) {
-  .brand-name, .brand-sub { max-width: 40vw; }
-  #langToggleBtn { display: none; }
+  .brand-sub {
+    font-size: 0.65rem;
+    white-space: nowrap;
+  }
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .icon-pill-btn {
+    height: 34px;
+    min-width: 34px;
+    padding: 0 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+  }
+
+  .hero-kicker {
+    font-size: 0.74rem;
+    padding: 5px 11px;
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+
+  .hero-desc {
+    margin-bottom: 22px;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .hero-trust-row {
+    gap: 12px;
+    padding-top: 18px;
+  }
+
+  .hero-photo-frame {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 22px;
+  }
+
+  .hero-photo-frame img {
+    aspect-ratio: 4 / 3;
+    height: auto;
+  }
+
+  .hero-float-card {
+    position: static;
+    margin: 0;
+    border-radius: 0;
+    padding: 13px 14px;
+  }
+
+  .hero-top-pill {
+    font-size: 0.71rem;
+    padding: 5px 10px;
+    top: 10px;
+    inset-inline-end: 10px;
+  }
+
+  .section-head {
+    margin-bottom: 30px;
+  }
+
+  .service-card,
+  .branch-card,
+  .pillar-card {
+    padding: 20px 18px;
+    border-radius: 18px;
+  }
+
+  .branch-actions .btn {
+    flex: 1 1 100%;
+  }
+
+  .booking-direct-card a {
+    font-size: 1.02rem;
+  }
+
+  .faq-trigger {
+    padding: 15px 16px;
+  }
+
+  .faq-body p {
+    padding: 0 16px 15px;
+  }
+
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  .site-footer {
+    padding-bottom: 92px;
+  }
+
+  .floating-wa {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    justify-content: center;
+    inset-inline-start: auto;
+    inset-inline-end: 14px;
+    bottom: max(14px, env(safe-area-inset-bottom));
+  }
+
+  .scroll-top-btn {
+    width: 42px;
+    height: 42px;
+    inset-inline-start: auto;
+    inset-inline-end: 17px;
+    bottom: calc(max(14px, env(safe-area-inset-bottom)) + 56px);
+  }
 }
 
 /* Safety: AOS content visible if JS fails / reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }

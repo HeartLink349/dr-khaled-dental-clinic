@@ -548,11 +548,28 @@
     if (window.lucide) window.lucide.createIcons();
     if (window.AOS) {
       window.AOS.init({
-        duration: 680,
+        duration: 560,
         easing: "ease-out-cubic",
         once: true,
-        offset: 40
+        offset: 12
       });
+      window.addEventListener("load", () => {
+        if (window.AOS) window.AOS.refreshHard();
+      });
+    }
+
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("aos-animate");
+            }
+          });
+        },
+        { rootMargin: "60px 0px 60px 0px", threshold: 0.02 }
+      );
+      document.querySelectorAll("[data-aos]").forEach((el) => io.observe(el));
     }
 
     document.getElementById("themeToggleBtn")?.addEventListener("click", () => {

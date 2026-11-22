@@ -545,11 +545,14 @@ html[dir="rtl"] .mobile-drawer-panel {
   inset-inline-start: 16px;
   inset-inline-end: 16px;
   padding: 13px 16px;
-  border-radius: 18px;
-  background: rgba(11, 37, 69, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(11, 37, 69, 0.44), rgba(15, 76, 104, 0.34));
+  backdrop-filter: blur(22px) saturate(185%);
+  -webkit-backdrop-filter: blur(22px) saturate(185%);
+  border: 1.5px solid rgba(255, 255, 255, 0.42);
+  box-shadow:
+    0 14px 34px rgba(7, 25, 48, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.36);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -568,9 +571,11 @@ html[dir="rtl"] .mobile-drawer-panel {
 .hero-float-badge {
   width: 40px;
   height: 40px;
-  border-radius: 12px;
-  background: rgba(13, 148, 136, 0.28);
-  border: 1px solid rgba(45, 212, 191, 0.45);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.38);
   color: #5eead4;
   display: inline-flex;
   align-items: center;
@@ -583,13 +588,15 @@ html[dir="rtl"] .mobile-drawer-panel {
   font-size: 0.9rem;
   font-weight: 800;
   line-height: 1.35;
+  text-shadow: 0 1px 8px rgba(7, 25, 48, 0.35);
 }
 
 .hero-float-meta > div > span {
   display: block;
   font-size: 0.76rem;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.4;
+  text-shadow: 0 1px 6px rgba(7, 25, 48, 0.35);
 }
 
 .hero-top-pill {
@@ -1623,22 +1630,16 @@ html {
   }
 
   .hero-photo-frame {
-    aspect-ratio: auto;
-    display: flex;
-    flex-direction: column;
+    aspect-ratio: 4 / 3;
     border-radius: 22px;
   }
 
-  .hero-photo-frame img {
-    aspect-ratio: 4 / 3;
-    height: auto;
-  }
-
   .hero-float-card {
-    position: static;
-    margin: 0;
-    border-radius: 0;
-    padding: 13px 14px;
+    bottom: 10px;
+    inset-inline-start: 10px;
+    inset-inline-end: 10px;
+    padding: 10px 12px;
+    border-radius: 16px;
   }
 
   .hero-top-pill {
